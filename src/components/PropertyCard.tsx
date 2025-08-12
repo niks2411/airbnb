@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,6 +15,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard = ({
+  id,
   image,
   location,
   title,
@@ -21,8 +24,19 @@ const PropertyCard = ({
   nights,
   isFavorite = false,
 }: PropertyCardProps) => {
+  const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(isFavorite);
+
+  const handleCardClick = () => {
+    navigate(`/property/${id}`);
+  };
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click
+    setIsLiked(!isLiked);
+  };
   return (
-    <div className="group cursor-pointer">
+    <div className="group cursor-pointer" onClick={handleCardClick}>
       <div className="relative">
         <div className="aspect-square overflow-hidden rounded-xl bg-muted">
           <img
@@ -34,11 +48,12 @@ const PropertyCard = ({
         <Button
           variant="ghost"
           size="icon"
+          onClick={handleFavoriteClick}
           className="absolute top-3 right-3 h-8 w-8 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
         >
           <Heart
-            className={`h-4 w-4 ${
-              isFavorite ? "fill-airbnb-red text-airbnb-red" : "text-foreground"
+            className={`h-4 w-4 transition-colors ${
+              isLiked ? "fill-red-500 text-red-500" : "text-foreground hover:text-red-500"
             }`}
           />
         </Button>

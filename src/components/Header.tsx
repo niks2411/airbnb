@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, Menu, User, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("homes");
 
   return (
@@ -11,9 +13,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-airbnb-red">
+            <button
+              onClick={() => navigate("/")}
+              className="text-2xl font-bold text-airbnb-red hover:opacity-80 transition-opacity"
+            >
               airbnb
-            </div>
+            </button>
           </div>
 
           {/* Navigation Tabs */}
@@ -71,13 +76,19 @@ const Header = () => {
 
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
-            <button className="hidden md:block text-sm font-medium text-foreground hover:bg-muted px-3 py-2 rounded-full transition-colors">
+            <button
+              onClick={() => navigate("/login")}
+              className="hidden md:block text-sm font-medium text-foreground hover:bg-muted px-3 py-2 rounded-full transition-colors"
+            >
               Become a host
             </button>
             <Button variant="ghost" size="icon" className="rounded-full">
               <Globe className="h-4 w-4" />
             </Button>
-            <div className="flex items-center border border-border rounded-full px-2 py-1 hover:shadow-md transition-shadow cursor-pointer">
+            <div
+              onClick={() => navigate("/login")}
+              className="flex items-center border border-border rounded-full px-2 py-1 hover:shadow-md transition-shadow cursor-pointer"
+            >
               <Button variant="ghost" size="icon" className="rounded-full h-8 w-8">
                 <Menu className="h-4 w-4" />
               </Button>

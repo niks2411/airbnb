@@ -1,8 +1,15 @@
 // Property data for the Airbnb clone
+import property1 from "@/assets/property-1.jpg";
+import property2 from "@/assets/property-2.jpg";
+import property3 from "@/assets/property-3.jpg";
+import property4 from "@/assets/property-4.jpg";
+import property5 from "@/assets/property-5.jpg";
+import property6 from "@/assets/property-6.jpg";
+
 export const popularHomesGurgaon = [
   {
     id: "1",
-    image: "/src/assets/property-1.jpg",
+    image: property1,
     location: "Flat in Gurugram",
     title: "Modern Luxury Apartment",
     price: 12371,
@@ -12,7 +19,7 @@ export const popularHomesGurgaon = [
   },
   {
     id: "2",
-    image: "/src/assets/property-2.jpg",
+    image: property2,
     location: "Flat in Gurugram",
     title: "Bohemian Studio Haven",
     price: 7644,
@@ -22,7 +29,7 @@ export const popularHomesGurgaon = [
   },
   {
     id: "3",
-    image: "/src/assets/property-3.jpg",
+    image: property3,
     location: "Flat in Gurugram",
     title: "Minimalist Sanctuary",
     price: 5830,
@@ -32,7 +39,7 @@ export const popularHomesGurgaon = [
   },
   {
     id: "4",
-    image: "/src/assets/property-4.jpg",
+    image: property4,
     location: "Flat in Gurugram",
     title: "Cozy Urban Retreat",
     price: 5300,
@@ -42,7 +49,7 @@ export const popularHomesGurgaon = [
   },
   {
     id: "5",
-    image: "/src/assets/property-5.jpg",
+    image: property5,
     location: "Home in Gurugram",
     title: "Elegant City Home",
     price: 10260,
@@ -52,7 +59,7 @@ export const popularHomesGurgaon = [
   },
   {
     id: "6",
-    image: "/src/assets/property-6.jpg",
+    image: property6,
     location: "Flat in Gurugram",
     title: "Contemporary Loft",
     price: 5116,
@@ -65,7 +72,7 @@ export const popularHomesGurgaon = [
 export const gautamBuddhaNagar = [
   {
     id: "7",
-    image: "/src/assets/property-1.jpg",
+    image: property1,
     location: "Flat in Gautam Buddha Nagar",
     title: "Weekend Paradise",
     price: 8500,
@@ -75,7 +82,7 @@ export const gautamBuddhaNagar = [
   },
   {
     id: "8",
-    image: "/src/assets/property-2.jpg",
+    image: property2,
     location: "Flat in Gautam Buddha Nagar",
     title: "Artistic Getaway",
     price: 6200,
@@ -85,7 +92,7 @@ export const gautamBuddhaNagar = [
   },
   {
     id: "9",
-    image: "/src/assets/property-3.jpg",
+    image: property3,
     location: "Flat in Gautam Buddha Nagar",
     title: "Modern Comfort",
     price: 7100,
@@ -95,7 +102,7 @@ export const gautamBuddhaNagar = [
   },
   {
     id: "10",
-    image: "/src/assets/property-4.jpg",
+    image: property4,
     location: "Flat in Gautam Buddha Nagar",
     title: "Serene Space",
     price: 5800,
@@ -105,7 +112,7 @@ export const gautamBuddhaNagar = [
   },
   {
     id: "11",
-    image: "/src/assets/property-5.jpg",
+    image: property5,
     location: "Flat in Gautam Buddha Nagar",
     title: "Luxury Weekend Stay",
     price: 9400,
@@ -115,7 +122,7 @@ export const gautamBuddhaNagar = [
   },
   {
     id: "12",
-    image: "/src/assets/property-6.jpg",
+    image: property6,
     location: "Flat in Gautam Buddha Nagar",
     title: "Stylish Apartment",
     price: 6800,
