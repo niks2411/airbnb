@@ -2,39 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Airbnb-inspired Design System */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Airbnb coral/red theme */
+    --primary: 347 82% 57%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 347 82% 52%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 347 82% 57%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 347 82% 57%;
+
+    /* Custom Airbnb tokens */
+    --airbnb-red: 347 82% 57%;
+    --airbnb-red-dark: 347 82% 52%;
+    --airbnb-pink: 347 82% 95%;
+    --airbnb-gray: 0 0% 45%;
+    --airbnb-light-gray: 0 0% 96%;
+    --airbnb-dark-gray: 0 0% 13%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--airbnb-red)), hsl(var(--airbnb-red-dark)));
+    --gradient-card: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-search: 0 8px 28px rgba(0, 0, 0, 0.12);
 
     --radius: 0.5rem;
 
