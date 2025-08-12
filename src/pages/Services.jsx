@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
 
 const services = [
   {
@@ -89,10 +90,14 @@ const services = [
 
 const ServiceCard = ({ service }) => {
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleCardClick = () => {
-    // For demo purposes, just show an alert
-    alert(`Service "${service.title}" selected! This would navigate to the service booking page.`);
+    toast({
+      title: "Service selected!",
+      description: `You've selected "${service.title}". Booking functionality coming soon!`,
+    });
+    // In a real app, this would navigate to: navigate(`/service/${service.id}`);
   };
 
   const getCategoryColor = (category) => {

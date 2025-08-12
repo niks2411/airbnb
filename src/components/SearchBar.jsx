@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const SearchBar = () => {
   const navigate = useNavigate();
@@ -13,9 +14,15 @@ const SearchBar = () => {
     guests: 1,
   });
 
+  const { toast } = useToast();
+
   const handleSearch = () => {
     if (!searchData.location) {
-      alert("Please enter a destination");
+      toast({
+        title: "Destination required",
+        description: "Please enter a destination to search for properties.",
+        variant: "destructive",
+      });
       return;
     }
     

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import { popularHomesGurgaon, gautamBuddhaNagar } from "@/data/properties";
+import { useToast } from "@/hooks/use-toast";
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -29,12 +30,50 @@ const PropertyDetail = () => {
     );
   }
 
+  const { toast } = useToast();
+
   const handleBooking = () => {
     if (!checkIn || !checkOut) {
-      alert("Please select check-in and check-out dates");
+      toast({
+        title: "Dates required",
+        description: "Please select check-in and check-out dates to proceed with booking.",
+        variant: "destructive",
+      });
       return;
     }
-    alert(`Booking confirmed for ${property.title}!\nDates: ${checkIn} to ${checkOut}\nGuests: ${guests}`);
+    
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+    
+    if (checkOutDate <= checkInDate) {
+      toast({
+        title: "Invalid dates",
+        description: "Check-out date must be after check-in date.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    toast({
+      title: "Booking confirmed!",
+      description: `Your reservation for ${property.title} from ${checkIn} to ${checkOut} for ${guests} guest${guests > 1 ? 's' : ''} has been confirmed.`,
+    });
+  };
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: property.title,
+        text: `Check out this amazing property: ${property.title}`,
+        url: window.location.href,
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: "Link copied!",
+        description: "Property link has been copied to your clipboard.",
+      });
+    }
   };
 
   return (
@@ -53,7 +92,7 @@ const PropertyDetail = () => {
             Back to Home
           </Button>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="flex items-center gap-2">
+            <Button variant="ghost" onClick={handleShare} className="flex items-center gap-2">
               <Share className="h-4 w-4" />
               Share
             </Button>

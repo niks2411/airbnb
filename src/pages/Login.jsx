@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { X, Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,15 +16,23 @@ const Login = () => {
     lastName: "",
   });
 
+  const { toast } = useToast();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simulate login/signup
-    alert(isLogin ? "Login successful!" : "Account created successfully!");
-    navigate("/");
+    toast({
+      title: isLogin ? "Welcome back!" : "Account created!",
+      description: isLogin ? "You have been successfully logged in." : "Your account has been created successfully.",
+    });
+    setTimeout(() => navigate("/"), 1000);
   };
 
   const handleSocialLogin = (provider) => {
-    alert(`${provider} login not implemented in demo`);
+    toast({
+      title: "Feature coming soon",
+      description: `${provider} login will be available in a future update.`,
+    });
   };
 
   return (

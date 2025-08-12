@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Heart, Star } from "lucide-react";
+import { Heart, Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const PropertyCard = ({
   id,
@@ -20,9 +21,15 @@ const PropertyCard = ({
     navigate(`/property/${id}`);
   };
 
+  const { toast } = useToast();
+
   const handleFavoriteClick = (e) => {
     e.stopPropagation(); // Prevent card click
     setIsLiked(!isLiked);
+    toast({
+      title: isLiked ? "Removed from favorites" : "Added to favorites",
+      description: isLiked ? `${title} has been removed from your favorites.` : `${title} has been added to your favorites.`,
+    });
   };
   return (
     <div className="group cursor-pointer" onClick={handleCardClick}>
@@ -46,9 +53,11 @@ const PropertyCard = ({
             }`}
           />
         </Button>
-        <div className="absolute top-3 left-3 px-2 py-1 bg-background/90 backdrop-blur-sm rounded-md">
-          <span className="text-xs font-medium">Guest favourite</span>
-        </div>
+        {isFavorite && (
+          <div className="absolute top-3 left-3 px-2 py-1 bg-background/90 backdrop-blur-sm rounded-md">
+            <span className="text-xs font-medium text-primary">Guest favourite</span>
+          </div>
+        )}
       </div>
 
       <div className="mt-3 space-y-1">

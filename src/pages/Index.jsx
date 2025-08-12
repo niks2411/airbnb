@@ -6,6 +6,7 @@ import ExperiencePreview from "@/components/ExperiencePreview";
 import ServicesPreview from "@/components/ServicesPreview";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { popularHomesGurgaon, gautamBuddhaNagar } from "@/data/properties";
 
 const Index = () => {
@@ -40,6 +41,7 @@ const Index = () => {
         <CallToAction />
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
 
 const experiences = [
   {
@@ -89,10 +90,14 @@ const experiences = [
 
 const ExperienceCard = ({ experience }) => {
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleCardClick = () => {
-    // For demo purposes, just show an alert
-    alert(`Experience "${experience.title}" selected! This would navigate to the experience details page.`);
+    toast({
+      title: "Experience selected!",
+      description: `You've selected "${experience.title}". Booking functionality coming soon!`,
+    });
+    // In a real app, this would navigate to: navigate(`/experience/${experience.id}`);
   };
 
   return (
