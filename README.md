@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# Airbnb Clone - JSX Version
 
-## Project info
+A modern Airbnb clone built with React (JSX), Vite, and Tailwind CSS. Features include property listings, search functionality, experiences, and services.
 
-**URL**: https://lovable.dev/projects/320eb9c2-270e-4393-9ca7-1ffad7792cda
+## Features
 
-## How can I edit this code?
+- 🏠 **Property Listings**: Browse beautiful properties with detailed information
+- 🔍 **Search Functionality**: Search by location, dates, and number of guests
+- 🎯 **Experiences**: Discover unique local experiences and activities
+- 🛠️ **Services**: Access premium services like photography, transport, and more
+- 📱 **Responsive Design**: Optimized for all device sizes
+- 🎨 **Modern UI**: Clean, intuitive interface with smooth animations
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **React 18** (JSX)
+- **Vite** - Fast build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Accessible component primitives
+- **Lucide React** - Beautiful icons
+- **React Router** - Client-side routing
+- **React Query** - Data fetching and caching
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/320eb9c2-270e-4393-9ca7-1ffad7792cda) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Use your preferred IDE**
+2. **Start development server**:
+   ```bash
+   npm run dev
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. **Preview production build**:
+   ```bash
+   npm run preview
+   ```
 
-Follow these steps:
+## Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Base UI components (buttons, cards, etc.)
+│   ├── Header.jsx      # Navigation header
+│   ├── SearchBar.jsx   # Property search component
+│   └── PropertyCard.jsx # Property listing card
+├── pages/              # Page components
+│   ├── Index.jsx       # Home page
+│   ├── PropertyDetail.jsx # Property details
+│   ├── SearchResults.jsx  # Search results
+│   ├── Experiences.jsx    # Experiences page
+│   ├── Services.jsx       # Services page
+│   └── Login.jsx          # Authentication
+├── data/               # Static data
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── assets/             # Images and static files
 ```
 
-**Edit a file directly in GitHub**
+## Pages
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Home** (`/`) - Property listings and search
+- **Search Results** (`/search`) - Filtered property results
+- **Property Details** (`/property/:id`) - Individual property information
+- **Experiences** (`/experiences`) - Local experiences and activities
+- **Services** (`/services`) - Premium services (photography, transport, etc.)
+- **Login** (`/login`) - User authentication
 
-**Use GitHub Codespaces**
+## Key Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Property Search
+- Location-based filtering
+- Date range selection
+- Guest count specification
+- Real-time search results
 
-## What technologies are used for this project?
+### Experiences
+- Food tours and cooking classes
+- Cultural activities
+- Adventure experiences
+- Local host-led activities
 
-This project is built with:
+### Services
+- Professional photography
+- Airport transfers
+- Personal chef services
+- Housekeeping and laundry
+- Grocery delivery
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Conversion Notes
 
-## How can I deploy this project?
+This project was converted from TypeScript to JSX:
+- Removed all TypeScript type annotations
+- Converted `.tsx` files to `.jsx`
+- Updated configuration files
+- Maintained full functionality
 
-Simply open [Lovable](https://lovable.dev/projects/320eb9c2-270e-4393-9ca7-1ffad7792cda) and click on Share -> Publish.
+## Contributing
 
-## Can I connect a custom domain to my Lovable project?
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT License - feel free to use this project for learning and development.
