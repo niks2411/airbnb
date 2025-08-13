@@ -6,6 +6,12 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import professionalPhotography from "@/assets/professional-photography.jpg";
+import airportTransfer from "@/assets/airport-transfer.jpg";
+import personalChef from "@/assets/personal-chef.jpg";
+import housekeeping from "@/assets/housekeeping.jpg";
+import laundryService from "@/assets/laundry-service.jpg";
+import groceryDelivery from "@/assets/grocery-delivery.jpg";
 
 const services = [
   {
@@ -17,7 +23,7 @@ const services = [
     price: 8500,
     rating: 4.9,
     reviews: 234,
-    image: "https://images.unsplash.com/photo-1554048612-b6a482b224b8?w=400&h=300&fit=crop",
+    image: professionalPhotography,
     description: "Professional vacation photography to capture your perfect moments",
     features: ["High-resolution photos", "Same-day editing", "Online gallery", "Print options"]
   },
@@ -30,7 +36,7 @@ const services = [
     price: 1200,
     rating: 4.8,
     reviews: 567,
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop",
+    image: airportTransfer,
     description: "Reliable and comfortable airport transfers with professional drivers",
     features: ["24/7 availability", "Flight tracking", "Meet & greet", "Fixed pricing"]
   },
@@ -43,7 +49,7 @@ const services = [
     price: 12000,
     rating: 4.9,
     reviews: 189,
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    image: personalChef,
     description: "Private chef service for intimate dining experiences in your accommodation",
     features: ["Custom menu", "Fresh ingredients", "Full service", "Dietary accommodations"]
   },
@@ -56,7 +62,7 @@ const services = [
     price: 2500,
     rating: 4.7,
     reviews: 892,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image: housekeeping,
     description: "Professional cleaning service to keep your stay comfortable and fresh",
     features: ["Eco-friendly products", "Flexible scheduling", "Trusted staff", "Quality guarantee"]
   },
@@ -69,7 +75,7 @@ const services = [
     price: 800,
     rating: 4.6,
     reviews: 445,
-    image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=400&h=300&fit=crop",
+    image: laundryService,
     description: "Convenient pickup and delivery laundry service for your stay",
     features: ["Pickup & delivery", "Same-day service", "Dry cleaning", "Stain treatment"]
   },
@@ -82,7 +88,7 @@ const services = [
     price: 500,
     rating: 4.5,
     reviews: 678,
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop",
+    image: groceryDelivery,
     description: "Fresh groceries delivered to your accommodation for a comfortable stay",
     features: ["Fresh produce", "Local specialties", "Fast delivery", "No minimum order"]
   }

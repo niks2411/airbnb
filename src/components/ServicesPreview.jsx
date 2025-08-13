@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star, Shield } from "lucide-react";
+import professionalPhotography from "@/assets/professional-photography.jpg";
+import airportTransfer from "@/assets/airport-transfer.jpg";
+import personalChef from "@/assets/personal-chef.jpg";
 
 const featuredServices = [
   {
@@ -12,7 +15,7 @@ const featuredServices = [
     price: 8500,
     rating: 4.9,
     reviews: 234,
-    image: "https://images.unsplash.com/photo-1554048612-b6a482b224b8?w=400&h=300&fit=crop",
+    image: professionalPhotography,
     description: "Professional vacation photography to capture your perfect moments"
   },
   {
@@ -23,7 +26,7 @@ const featuredServices = [
     price: 1200,
     rating: 4.8,
     reviews: 567,
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop",
+    image: airportTransfer,
     description: "Reliable and comfortable airport transfers with professional drivers"
   },
   {
@@ -34,7 +37,7 @@ const featuredServices = [
     price: 12000,
     rating: 4.9,
     reviews: 189,
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    image: personalChef,
     description: "Private chef service for intimate dining experiences"
   }
 ];
